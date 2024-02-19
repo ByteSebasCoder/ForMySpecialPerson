@@ -1,0 +1,223 @@
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: #f4f4f4;
+    background-image: url('fondo.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 100% 0; /* Establece la posición inicial fuera de la vista */
+    animation: slideBackground 1s ease-in-out forwards; /* Agrega una animación */
+}
+
+@keyframes slideBackground {
+    0% {
+        background-position: 100% 0; /* Posición inicial */
+    }
+    100% {
+        background-position: 0 0; /* Posición final (centro) */
+    }
+}
+.container {
+    width: 100%;
+    max-width: 400px;
+    
+}
+.birthday-text {
+    position: absolute;
+    top: 20%; /* Ajusta esta posición según dónde quieras que aparezca el texto */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff; /* Color blanco */
+    font-size: 2em; /* Tamaño de letra */
+    font-weight: bold; /* Letra en negrita */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra para que sea legible encima de las imágenes */
+    z-index: 10; /* Asegurarse de que aparezca encima de las imágenes */
+}
+.carousel-item img {
+    width: 100%;
+    display: block;
+    max-height: 300px;
+    margin: auto;
+    border-radius: 15px;   /* Agrega bordes curvos */
+    transition: transform 0.3s;  /* Transición para el efecto de movimiento */
+}
+
+.carousel-item img:hover {
+    transform: scale(1.05);  /* Aumenta el tamaño de la imagen ligeramente al pasar el cursor */
+}
+.slide-in {
+    animation: slideIn 2s ease-out;
+    opacity: 0;
+    transform: translateY(100px);
+    animation-fill-mode: forwards;
+    background-color: rgba(43, 37, 37, 0.5); /* Gris semi-transparente */
+    padding: 20px;
+    border: 1px solid #333;
+    border-top-left-radius: 100px 00px;
+    border-top-right-radius: 100px 100px;
+    border-bottom-left-radius: 100px 100px; 
+    border-bottom-right-radius: 100px 100px; 
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.bubble {
+    width: 40px;
+    height: 40px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    opacity: 0;
+    transform: scale(0);
+}
+
+.top-left {
+    animation: enterBubbleTopLeft 0.8s forwards, moveTopLeft 5s infinite 0.8s;
+}
+
+.top-right {
+    animation: enterBubbleTopRight 0.8s forwards, moveTopRight 5s infinite 0.8s;
+}
+
+.bottom-left {
+    animation: enterBubbleBottomLeft 0.8s forwards, moveBottomLeft 5s infinite 0.8s;
+}
+
+.bottom-right {
+    animation: enterBubbleBottomRight 0.8s forwards, moveBottomRight 5s infinite 0.8s;
+}
+
+@keyframes enterBubbleTopLeft {
+    0%, 20% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        top: 10%;
+        left: 10%;
+    }
+}
+
+@keyframes enterBubbleTopRight {
+    0%, 20% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        top: 10%;
+        right: 10%;
+    }
+}
+
+@keyframes enterBubbleBottomLeft {
+    0%, 20% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        bottom: 10%;
+        left: 10%;
+    }
+}
+
+@keyframes enterBubbleBottomRight {
+    0%, 20% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+        bottom: 10%;
+        right: 10%;
+    }
+}
+
+@keyframes moveTopLeft {
+    0%, 100% {
+        top: 10%;
+        left: 10%;
+    }
+    25% {
+        top: 10%;
+        left: 90%;
+    }
+    50% {
+        top: 90%;
+        left: 90%;
+    }
+    75% {
+        top: 90%;
+        left: 10%;
+    }
+}
+
+@keyframes moveTopRight {
+    0%, 100% {
+        top: 10%;
+        right: 10%;
+    }
+    25% {
+        top: 10%;
+        right: 90%;
+    }
+    50% {
+        top: 90%;
+        right: 90%;
+    }
+    75% {
+        top: 90%;
+        right: 10%;
+    }
+}
+
+@keyframes moveBottomLeft {
+    0%, 100% {
+        bottom: 10%;
+        left: 10%;
+    }
+    25% {
+        bottom: 10%;
+        left: 90%;
+    }
+    50% {
+        bottom: 90%;
+        left: 90%;
+    }
+    75% {
+        bottom: 90%;
+        left: 10%;
+    }
+}
+
+@keyframes moveBottomRight {
+    0%, 100% {
+        bottom: 10%;
+        right: 10%;
+    }
+    25% {
+        bottom: 10%;
+        right: 90%;
+    }
+    50% {
+        bottom: 90%;
+        right: 90%;
+    }
+    75% {
+        bottom: 90%;
+        right: 10%;
+    }
+}
